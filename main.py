@@ -7,7 +7,12 @@ def convertDate(timestamp):
     formated_date = d.strftime('%d %b %Y')
     return formated_date
 
-directory = r".\UPLOADS\JRO"
+
+directory = r".\UPLOADS\MJRO"
+if not os.path.isdir(directory):
+    # create dir
+    os.mkdir(directory)
+
 with os.scandir(directory) as dirList:
     for file in dirList:
         name = file.name
